@@ -1,0 +1,89 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(241, 117, 34);
+    user-select: none;
+}
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 79.8rem;
+    gap:1.875rem;
+    background: linear-gradient(
+        325deg, rgb(195, 174, 52) 0%, darkkhaki 30%, rgb(207, 188, 85) 70%, rgb(216, 207, 157)  100%
+    );
+}
+
+h2 {
+    font-size: 3em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.reset {
+    padding: 0.938rem 1.25rem;
+    width: 25%;
+    border-radius: 100%;
+    border-color: antiquewhite;
+    font-size: 1em;
+    color: black;
+    background-color: rgba(184, 170, 90, 0.244);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reset:focus{
+    background-color: rgb(247, 233, 144);
+    color: rgb(70, 61, 9) 
+}
+
+.game{
+    width: 56.875rem;
+    height: 26.875rem;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 0.625rem;
+    transform-style: preserve-3d;
+    perspective:31.25rem;
+}
+
+.item{
+    position: relative;
+    display: flex;
+    height: 6.25rem;
+    width: 6.25rem;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item::after{
+    content:"";
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen{
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after{
+    transform: rotateY(180deg);
+}
+.boxMatch::after{
+    transform: rotateY(180deg);
+}
